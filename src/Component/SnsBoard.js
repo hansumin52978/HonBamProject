@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SnsBoard.css';
 import { Link } from 'react-router-dom';
+
 const SnsBoard = () => {
+  const [isLiked, setLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(0);
+
+  const toggleLike = () => {
+    setLiked(!isLiked);
+    setLikeCount((prevCount) => (isLiked ? prevCount - 1 : prevCount + 1));
+  };
+
   return (
     <div className='board'>
       <div className='div'>
         <div className='board-wrap'>
           <div className='boardbottom'>
-            <div className='date'>
-              <div className='text-wrapper'>12월 4일</div>
+            <div className='id-text'>
+              <div className='text-wrapper-4'>abc1234 혼술하고 싶은 밤</div>
             </div>
-            <div className='comment-add'>
-              <div className='text-wrapper-2'>
+            <div className='comment-text'>
+              <div className='profile'></div>
+              <div className='text-wrapper-12'>
                 <Link to='/comment'>
                   <button
                     type='button'
@@ -21,27 +31,11 @@ const SnsBoard = () => {
                   </button>
                 </Link>
               </div>
-            </div>
-            <div className='profile' />
-            <div className='comment-text'>
-              <div className='text-wrapper-3'>
-                <Link to='/comment'>
-                  <button
-                    type='button'
-                    className='commentBtn'
-                  >
-                    댓글 62개 모두 보기
-                  </button>
-                </Link>
+              <div className='date'>
+                <div className='text-wrapper'>12월 4일</div>
               </div>
             </div>
-            <div className='id-text'>
-              <div className='text-wrapper-4'>abc1234 혼술하고 싶은 밤</div>
-            </div>
-            <div className='like-text'>
-              <div className='text-wrapper-5'>좋아요 50개</div>
-            </div>
-            <div className='save' />
+            <div className='like-text'></div>
             <div className='comment'>
               <Link to='/comment'>
                 <button
@@ -50,7 +44,14 @@ const SnsBoard = () => {
                 ></button>
               </Link>
             </div>
-            <div className='like' />
+            <div className='like'>
+              <button onClick={toggleLike}>
+                <span className={`heart ${isLiked ? 'liked' : ''}`}>
+                  &#10084;
+                </span>
+              </button>
+              <p>{likeCount + 49}명의 좋아요</p>
+            </div>
           </div>
           <div className='board-top'>
             <div className='sns-board-img' />
@@ -112,7 +113,7 @@ const SnsBoard = () => {
             </div>
           </div>
           <div className='logo'>
-            <div className='text-wrapper-12'>HONBAM</div>
+            <div className='text-wrapper-30'>HONBAM</div>
           </div>
         </div>
       </div>

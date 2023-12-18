@@ -236,32 +236,6 @@
   width: 208px;
 }
 
-.user-detail .messagebtn {
-  background-image: url(../assets/profileShareBtn.png);
-  height: 48px;
-  left: 377px;
-  object-fit: cover;
-  position: absolute;
-  top: 20px;
-  width: 230px;
-}
-.user-detail .messagebtn:hover {
-  cursor: pointer;
-}
-
-.user-detail .followimg {
-  background-image: url(../assets/profileEditBtn.png);
-  height: 48px;
-  left: 43px;
-  object-fit: cover;
-  position: absolute;
-  top: 20px;
-  width: 230px;
-}
-.user-detail .followimg:hover {
-  cursor: pointer;
-}
-
 .user-detail .user-top {
   height: 280px;
   left: 131px;
@@ -438,12 +412,27 @@
   width: 100px;
 }
 
-.user-detail .profileImg {
-  background-image: url(../assets/bambam.png);
+.boardtext1 {
+  color: #ffffff;
+  font-family: 'Inter-Bold', Helvetica;
+  font-size: 25px;
+  font-weight: 1000;
+  left: 230px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  top: 410px;
+  width: 300px;
+}
+
+.thumbnail-box1 {
   height: 153px;
-  left: 0;
+  left: 10px;
   object-fit: cover;
   position: absolute;
-  top: 49px;
+  top: 50px;
   width: 165px;
+}
+.thumbnail-box1:hover {
+  cursor: pointer;
 }

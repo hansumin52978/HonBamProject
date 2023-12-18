@@ -72,6 +72,28 @@
   width: 60px;
 }
 
+.follow-button > button {
+  margin-top: 294px;
+  margin-left: 74px;
+  background-color: rgba(214, 214, 214, 0.603);
+  color: rgb(0, 0, 0);
+  border-radius: 10%;
+  width: 232px;
+  height: 50px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+.follow-button > button:hover {
+  cursor: pointer;
+}
+.count {
+  margin-top: -273px;
+  margin-left: 435px;
+  font-weight: 700;
+}
+
 .user-detail .BOARD {
   height: 17px;
   left: 395px;
@@ -224,24 +246,19 @@
   margin-top: 50px;
 }
 
-.user-detail .messagebtn {
+.user-detail .messageBtn {
   background-image: url(../assets/ChatBtn.png);
   height: 48px;
-  left: 377px;
+  left: 550px;
   object-fit: cover;
-  position: absolute;
-  top: 0;
+  position: relative;
+  top: 328px;
   width: 230px;
+  border-radius: 10%;
+  z-index: 1;
 }
-
-.user-detail .followimg {
-  background-image: url(../assets/followBtn.png);
-  height: 48px;
-  left: 43px;
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 230px;
+.user-detail .messageBtn:hover {
+  cursor: pointer;
 }
 
 .user-detail .user-top {
@@ -315,7 +332,7 @@
   width: 158px;
 }
 
-.user-detail .following {
+.user-detail .followimg {
   height: 33px;
   left: 577px;
   position: absolute;
@@ -333,6 +350,32 @@
   line-height: normal;
   position: absolute;
   top: 0;
+  white-space: nowrap;
+  width: 87px;
+}
+.user-detail .text-wrapper-23 {
+  color: #ffffff;
+  font-family: 'Inter-Bold', Helvetica;
+  font-size: 30px;
+  font-weight: 700;
+  left: 580px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 131px;
+  white-space: nowrap;
+  width: 87px;
+}
+.user-detail .text-wrapper-24 {
+  color: #ffffff;
+  font-family: 'Inter-Bold', Helvetica;
+  font-size: 30px;
+  font-weight: 700;
+  left: 600px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 79px;
   white-space: nowrap;
   width: 87px;
 }
