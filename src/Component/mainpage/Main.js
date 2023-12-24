@@ -1,6 +1,5 @@
 import {} from '@mui/material';
 import React, { useState } from 'react';
-import { useStyles } from '../scss/MainMui';
 
 import main1 from '../../assets/komarov-egor-yp20k9i_mZ4-unsplash.jpg';
 import main2 from '../../assets/michele-blackwell-rAyCBQTH7ws-unsplash.jpg';
@@ -19,7 +18,6 @@ const Main2 = () => {
   const redirection = useNavigate();
 
   const [open, setOpen] = useState(true);
-  const classes = useStyles();
 
   const closeHandler = () => {
     setOpen(false);
@@ -118,7 +116,10 @@ const Main2 = () => {
                 혼자서도 즐길 수 있는
                 <Link to='/search'>
                   맛집 보러가기
-                  <ArrowForwardIos className='search' fontSize='samll' />
+                  <ArrowForwardIos
+                    className='search'
+                    fontSize='samll'
+                  />
                 </Link>
               </p>
             </div>
@@ -145,7 +146,10 @@ const Main2 = () => {
                 <br />
                 <Link to='/recipe'>
                   자세히보기
-                  <ArrowForwardIos className='recipe' fontSize='samll' />
+                  <ArrowForwardIos
+                    className='recipe'
+                    fontSize='samll'
+                  />
                 </Link>
               </p>
             </div>

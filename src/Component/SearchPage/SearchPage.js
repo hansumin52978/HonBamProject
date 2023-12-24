@@ -7,6 +7,7 @@ import {
   faMapLocationDot,
   faPhone,
   faStar,
+  faTimes,
   faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -48,6 +49,16 @@ function SearchPage() {
     }
   };
 
+  // 검색어 초기화 함수
+  const clearSearch = () => {
+    setSearchTerm('');
+  };
+
+  // 검색어가 입력되었는지 여부를 확인하는 함수
+  const isSearchTermEmpty = () => {
+    return searchTerm.trim() === '';
+  };
+
   // JSX로 화면 렌더링
   return (
     <div className='search_page'>
@@ -57,14 +68,30 @@ function SearchPage() {
           <li>지역검색</li>
         </ul>
         <div className='search_bar'>
+          {/* 검색어 입력창 */}
           <input
             type='text'
             placeholder='Search...'
+            value={searchTerm}
             onChange={(event) => {
               setSearchTerm(event.target.value);
             }}
           />
-          <FontAwesomeIcon icon={faMagnifyingGlass} className='button' />
+          {/* 검색 버튼 */}
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            className='button'
+            style={{ display: isSearchTermEmpty() ? 'block' : 'none' }}
+          />
+          {/* 검색어 초기화 버튼 */}
+          {searchTerm && (
+            <FontAwesomeIcon
+              icon={faTimes}
+              className='clear_button'
+              onClick={clearSearch}
+              style={{ display: 'block' }}
+            />
+          )}
         </div>
       </div>
       {/* favoritedTitles 배열에 항목이 있는 경우에만 즐겨찾기 목록 표시 */}
@@ -73,7 +100,10 @@ function SearchPage() {
           <p className='joy'>즐겨찾기</p>
           {/* favoritedTitles 배열을 매핑하여 각 항목과 삭제 버튼을 표시 */}
           {favoritedTitles.map((title, index) => (
-            <div key={index} className='bye-container'>
+            <div
+              key={index}
+              className='bye-container'
+            >
               <div className='bye'>{title}</div>
               {/* 삭제 버튼을 누르면 해당 항목을 favoritedTitles에서 제거 */}
               <button
@@ -123,8 +153,14 @@ function SearchPage() {
             const isFavorite = favorites.includes(val.id);
 
             return (
-              <div className='template' key={val.id}>
-                <img src={val.image} alt='' />
+              <div
+                className='template'
+                key={val.id}
+              >
+                <img
+                  src={val.image}
+                  alt=''
+                />
                 <h3>{val.title}</h3>
                 <p className='location'>
                   <FontAwesomeIcon
